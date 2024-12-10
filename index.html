@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 Maneras en las que te Amo</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+        }
+        h1 {
+            color: #ff4d4d;
+            margin-top: 20px;
+            font-size: 2.5rem;
+        }
+        #message {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 30px auto;
+            max-width: 80%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #e63946;
+        }
+        .floating {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10%); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌷 1000 Maneras en las que te Amo ❤️ </h1>
+    <div id="message">Haz clic para ver una manera más en la que te amo.</div>
+    <button onclick="showNewMessage()">Muéstrame otra frase</button>
+    <script>
+        // Aquí se almacenan las frases de amor
+        const phrases = [
+            "Amo tu sonrisa porque ilumina mi día.",
+            "Amo cómo siempre me haces sentir especial.",
+            "Amo la forma en la que me miras.",
+            "Amo cada momento que paso contigo.",
+            "Amo tus abrazos porque me siento en casa.",
+            // Agrega aquí más frases personalizadas pt1
+            "Amo la forma en que me amas.",
+            "Amo tu carita preciosa y tus ojos bellos.",
+            "Amo cuando dices que te ves mal, y en verdad estás hermosa.",
+            "Amo cuando me dices que me amas más pero la verdad es que tenemos un empate."
+            //Agregar más pls
+
+        ];
+
+        // Mostrar una nueva frase
+        function showNewMessage() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            document.getElementById('message').innerText = phrases[randomIndex];
+        }
+
+        // Generar emojis flotantes
+        function createFloatingEmoji(emoji) {
+            const element = document.createElement('div');
+            element.classList.add('floating');
+            element.innerText = emoji;
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = Math.random() * 2 + 4 + 's';
+            document.body.appendChild(element);
+            setTimeout(() => element.remove(), 6000);
+        }
+
+        // Crear corazones y tulipanes
+        setInterval(() => createFloatingEmoji('❤️'), 500);
+        setInterval(() => createFloatingEmoji('🌷'), 700);
+    </script>
+</body>
+</html>
